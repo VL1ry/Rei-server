@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANITY SERVER</title>
+<style>
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  #stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 50px; 
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .button:hover {
+    background-color: #ddd;
+  }
+  .big-text {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  .small-text {
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<div class="big-text">DISCORD SERVER</div>
+<div class="small-text">Achievements 100+</div>
+<div> 
+  <a href="https://discord.gg/brw3ZnvNzj" class="button">Shop server</a>
+  <a href="https://discord.gg/softbank" class="button">Chat server</a>
+</div> 
+
+<script>
+  function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const xy = Math.random() * 100;
+    const duration = Math.random() * 10 + 5;
+    const size = Math.random() * 2;
+    const delay = Math.random() * 5;
+    star.style.cssText = `
+      position: absolute;
+      top: ${Math.random() * 100}%;
+      left: ${Math.random() * 100}%;
+      width: ${size}px;
+      height: ${size}px;
+      background: rgba(255, 255, 255, ${Math.random()});
+      animation: twinkling ${duration}s infinite;
+      animation-delay: ${delay}s;
+    `;
+    document.getElementById('stars').appendChild(star);
+  }
+
+  // ほしのかず
+  for (let i = 0; i < 500; i++) {
+    createStar();
+  }
+</script>
+</body>
+</html>
